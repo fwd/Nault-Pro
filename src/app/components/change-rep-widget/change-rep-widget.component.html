@@ -55,10 +55,10 @@
         <span uk-icon="icon: warning;"></span>{{ 'change-rep-widget.this-representative-has-announced-plans-to-permanently-shutdown' | transloco }}
       </p>
       <p class="uk-text-danger" *ngIf="rep.status.veryHighWeight">
-        <span uk-icon="icon: warning;"></span>{{ 'change-rep-widget.this-representative-has-a-very-high-voting-weight' | transloco: { percent: 5 } }}
+        <span uk-icon="icon: warning;"></span>{{ 'change-rep-widget.this-representative-has-a-very-high-voting-weight' | transloco: { percent: 3 } }}
       </p>
       <p class="uk-text-warning" *ngIf="rep.status.highWeight">
-        <span uk-icon="icon: warning;"></span>{{ 'change-rep-widget.this-representative-has-a-high-voting-weight' | transloco: { percent: 3 } }}
+        <span uk-icon="icon: warning;"></span>{{ 'change-rep-widget.this-representative-has-a-high-voting-weight' | transloco: { percent: 2 } }}
       </p>
       <p class="uk-text-danger" *ngIf="rep.status.veryLowUptime && rep.status.uptime > 0">
         <span uk-icon="icon: warning;"></span>{{ 'change-rep-widget.this-representative-is-often-offline' | transloco: { percent: rep.status.uptime.toFixed(1) } }}
@@ -90,7 +90,7 @@
   </div>
 </div>
 <ng-template #noRepresentatives>
-  <div class="nav-representative-info" *ngIf="(!initialLoadComplete || selectedAccountHasRepresentative) else selectedAccountHasNoRep">
+  <!-- <div class="nav-representative-info" *ngIf="(!initialLoadComplete || selectedAccountHasRepresentative) else selectedAccountHasNoRep">
     <div class="representative">
       <h2>{{ 'general.representative' | transloco }}</h2>
       <div class="representative-name-row">
@@ -101,7 +101,7 @@
         <div class="label">{{ 'change-rep-widget.checking-status' | transloco }}</div>
       </div>
     </div>
-  </div>
+  </div> -->
   <ng-template #selectedAccountHasNoRep>
     <div class="nav-representative-info">
       <div class="representative">

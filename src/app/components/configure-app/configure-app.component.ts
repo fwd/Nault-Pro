@@ -52,6 +52,7 @@ export class ConfigureAppComponent implements OnInit {
     { name: 'knano', value: 'knano' },
     { name: 'nano', value: 'nano' },
   ];
+
   selectedDenomination = this.denominations[0].value;
 
   storageOptions = [
@@ -150,6 +151,12 @@ export class ConfigureAppComponent implements OnInit {
     { name: this.translocoService.translate('configure-app.pending-options.manual'), value: 'manual' },
   ];
   selectedPendingOption = this.pendingOptions[0].value;
+
+  decentralizedAliasesOptions = [
+    { name: this.translocoService.translate('configure-app.decentralized-aliases-options.disabled'), value: 'disabled' },
+    { name: this.translocoService.translate('configure-app.decentralized-aliases-options.enabled'), value: 'enabled' },
+  ];
+  selectedDecentralizedAliasesOption = this.decentralizedAliasesOptions[0].value;
 
   // prefixOptions = [
   //   { name: 'xrb_', value: 'xrb' },
@@ -256,6 +263,7 @@ export class ConfigureAppComponent implements OnInit {
     const settings = this.appSettings.settings;
 
     const matchingLanguage = this.languages.find(language => language.id === settings.language);
+    
     this.selectedLanguage = matchingLanguage.id || this.languages[0].id;
 
     const matchingCurrency = this.currencies.find(d => d.value === settings.displayCurrency);
@@ -284,6 +292,9 @@ export class ConfigureAppComponent implements OnInit {
 
     const matchingPendingOption = this.pendingOptions.find(d => d.value === settings.pendingOption);
     this.selectedPendingOption = matchingPendingOption ? matchingPendingOption.value : this.pendingOptions[0].value;
+
+    const matchingDecentralizedAliasesOption = this.decentralizedAliasesOptions.find(d => d.value === settings.decentralizedAliasesOption);
+    this.selectedDecentralizedAliasesOption = matchingDecentralizedAliasesOption ? matchingDecentralizedAliasesOption.value : this.decentralizedAliasesOptions[0].value;
 
     this.serverOptions = this.appSettings.serverOptions;
     this.selectedServer = settings.serverName;
@@ -374,6 +385,8 @@ export class ConfigureAppComponent implements OnInit {
       minReceive = this.minimumReceive;
     }
 
+    const decentralizedAliasesOption = this.selectedDecentralizedAliasesOption;
+
     // reload pending if threshold changes or if receive priority changes from manual to auto
     let reloadPending = this.appSettings.settings.minimumReceive !== this.minimumReceive
     || (pendingOption !== 'manual' && pendingOption !== this.appSettings.settings.pendingOption);
@@ -435,6 +448,7 @@ export class ConfigureAppComponent implements OnInit {
       multiplierSource: Number(this.selectedMultiplierOption),
       customWorkServer: this.customWorkServer,
       pendingOption: pendingOption,
+      decentralizedAliasesOption: decentralizedAliasesOption,
       minimumReceive: minReceive,
       defaultRepresentative: this.defaultRepresentative || null,
     };

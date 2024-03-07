@@ -159,6 +159,23 @@
             <div class="uk-form-horizontal">
 
               <div class="uk-margin">
+                <label class="uk-form-label">{{ 'configure-app.decentralized-aliases' | transloco }} <span uk-icon="icon: info;" uk-tooltip [title]="t('configure-app.decentralized-aliases-require-external-requests')"></span></label>
+                <div class="uk-form-controls">
+
+                  <div class="uk-inline uk-width-1-1">
+                    <select class="uk-select" [(ngModel)]="selectedDecentralizedAliasesOption">
+                      <option *ngFor="let decentralizedAliasesOption of decentralizedAliasesOptions" [value]="decentralizedAliasesOption.value">{{ decentralizedAliasesOption.name }}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uk-width-1-1">
+            <div class="uk-form-horizontal">
+
+              <div class="uk-margin">
                 <label class="uk-form-label">{{ 'configure-app.default-representative' | transloco }} <span uk-icon="icon: info;" uk-tooltip [title]="t('configure-app.this-representative-will-be-used-for-any-new-account')"></span></label>
 
                 <div class="uk-form-controls">
@@ -385,9 +402,7 @@
                 <label class="uk-form-label">{{ 'configure-app.work-server' | transloco }}</label>
                   <div class="uk-form-controls">
                       <input [(ngModel)]="customWorkServer" class="uk-input uk-margin-small-bottom" type="text" placeholder="https://rpc.nano.to">
-                      <span class="uk-text-meta">
-                        {{ 'configure-app.this-has-to-be-a-valid-work.1' | transloco }} <a href="https://docs.nault.cc/2021/02/13/custom-work-server.html" target="_blank" rel="noopener noreferrer">{{ 'configure-app.this-has-to-be-a-valid-work.2-link-work' | transloco }}</a> {{ 'configure-app.this-has-to-be-a-valid-work.3' | transloco }}
-                      </span>
+                      <span class="uk-text-meta">{{ 'configure-app.this-has-to-be-a-valid-work.1' | transloco }} <a href="https://rpc.nano.to/#work_generate" target="_blank" rel="noopener noreferrer">{{ 'configure-app.this-has-to-be-a-valid-work.2-link-work' | transloco }}</a> {{ 'configure-app.this-has-to-be-a-valid-work.3' | transloco }}</span>
                   </div>
               </div>
               <div class="uk-margin" *ngIf="selectedPoWOption === 'clientWebGL' || selectedPoWOption === 'clientCPU' || selectedPoWOption === 'custom'">
