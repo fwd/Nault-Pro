@@ -223,7 +223,7 @@
     "successfully-deleted-all-wallet-data": "Successfully deleted all wallet data!",
     "successfully-updated": "Successfully updated!",
     "switched-back-to-browser-local-storage-for-the-wallet-data": "Switched back to \"Browser Local Storage\" for the wallet data. Use the button again if you want to save other settings.",
-    "this-has-to-be-a-valid-authorization-header": "This has to be a valid Authorization header.",
+    "this-has-to-be-a-valid-authorization-header": "Valid authorization header or API key.",
     "this-has-to-be-a-valid-rpc": {
       "1": "This has to be a valid",
       "2-link-rpc": "nano RPC endpoint",
