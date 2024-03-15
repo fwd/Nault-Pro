@@ -63,16 +63,16 @@ export class AiComponent implements OnInit {
 
     var on = false
 
-    if (this.walletService.isLocked()) {
+    // if (this.walletService.isLocked()) {
 
-      const wasUnlocked = await this.walletService.requestWalletUnlock();
+    //   const wasUnlocked = await this.walletService.requestWalletUnlock();
 
-      if (wasUnlocked === false) {
-        this.router.navigate(['accounts']);
-        return;
-      }
+    //   if (wasUnlocked === false) {
+    //     this.router.navigate(['accounts']);
+    //     return;
+    //   }
 
-    }
+    // }
 
 
     // this.showPopup = false
@@ -165,16 +165,16 @@ export class AiComponent implements OnInit {
 
     // console.log('CHILD->PARENT:', "Purchasing Prompt");
 
-    if (this.walletService.isLocked()) {
+    // if (this.walletService.isLocked()) {
 
-      const wasUnlocked = await this.walletService.requestWalletUnlock();
+    //   const wasUnlocked = await this.walletService.requestWalletUnlock();
 
-      if (wasUnlocked === false) {
-        this.router.navigate(['accounts']);
-        return;
-      }
+    //   if (wasUnlocked === false) {
+    //     this.router.navigate(['accounts']);
+    //     return;
+    //   }
 
-    }
+    // }
 
     const walletAccount = this.walletService.wallet.accounts[0]
 

@@ -84,7 +84,7 @@ export class TransactionDetailsComponent implements OnInit {
     }
 
     const hashData = blockData.blocks[hash];
-    const hashContents = JSON.parse(hashData.contents);
+    const hashContents = hashData.contents ? hashData.contents : hashData;
     hashData.contents = hashContents;
 
     this.transactionJSON = JSON.stringify(hashData.contents, null , 4);

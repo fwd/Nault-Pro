@@ -12,6 +12,8 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
+## Changes
+
 - ✅ Redesigned UI/UX
 - ✅ Add Nano.to Usernames to send page.
 - ✅ Add Nano.to Usernames to transactions.

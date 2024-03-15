@@ -20,7 +20,6 @@ interface AppSettings {
   multiplierSource: number;
   customWorkServer: string;
   pendingOption: string;
-  decentralizedAliasesOption: string;
   serverName: string;
   serverAPI: string | null;
   serverWS: string | null;
@@ -53,11 +52,6 @@ export class AppSettingsService {
     multiplierSource: 1,
     customWorkServer: '',
     pendingOption: 'amount',
-    decentralizedAliasesOption: 'disabled',
-    serverName: 'random',
-    serverAPI: null,
-    serverWS: null,
-    serverAuth: null,
     minimumReceive: '0.000001',
     walletVersion: 1,
     lightModeEnabled: false,
@@ -67,38 +61,47 @@ export class AppSettingsService {
   serverOptions = [
     
     {
-      name: 'Nano.to Pro RPC',
+      name: 'Nano.to - Automatic',
       value: 'rpc.nano.to',
       api: 'https://rpc.nano.to',
       ws: null,
-      auth: null,
-      shouldRandom: false,
-    },
-    {
-      name: 'Rainstorm City',
-      value: 'rainstorm',
-      api: 'https://rainstorm.city/api',
-      ws: 'wss://rainstorm.city/websocket',
-      auth: null,
+      auth: '',
       shouldRandom: true,
     },
 
-    // {
-    //   name: 'US-2.Nano.to',
-    //   value: 'us-2.nano.to',
-    //   api: 'https://us-2.nano.to',
-    //   ws: null,
-    //   auth: null,
-    //   shouldRandom: true,
-    // },
-
     {
-      name: 'Europe-1.Nano.to',
-      value: 'uk-1.nano.to',
+      name: 'US-1.Nano.To',
+      value: 'us-2.nano.to',
       api: 'https://us-2.nano.to',
       ws: null,
-      // ws: 'wss://solarnanofaucet.space/websocket',
-      auth: null,
+      auth: '',
+      shouldRandom: true,
+    },
+
+    {
+      name: 'US-2.Nano.To',
+      value: 'us-2.nano.to',
+      api: 'https://us-2.nano.to',
+      ws: null,
+      auth: '',
+      shouldRandom: true,
+    },
+
+    {
+      name: 'Europe-1.Nano.To',
+      value: 'uk-2.nano.to',
+      api: 'https://us-2.nano.to',
+      ws: null,
+      auth: '',
+      shouldRandom: true,
+    },
+
+    {
+      name: 'Africa-1.Nano.To',
+      value: 'humblenano-2.nano.to',
+      api: 'https://humblenano-2.nano.to',
+      ws: null,
+      auth: '',
       shouldRandom: true,
     },
 
@@ -112,7 +115,7 @@ export class AppSettingsService {
     },
 
     {
-      name: 'Custom',
+      name: 'Custom Server',
       value: 'custom',
       api: null,
       ws: null,
@@ -136,9 +139,7 @@ export class AppSettingsService {
     if (!server.api) return acc;
     acc.push( server.api.replace(/https?:\/\//g, '') );
     return acc;
-  }, [
-    'node.somenano.com'
-  ]);
+  }, []);
 
   constructor(
     private translate: TranslocoService
@@ -240,7 +241,6 @@ export class AppSettingsService {
       multiplierSource: 1,
       customWorkServer: '',
       pendingOption: 'amount',
-      decentralizedAliasesOption: 'disabled',
       serverName: 'random',
       serverAPI: null,
       serverWS: null,
