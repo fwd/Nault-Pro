@@ -105,14 +105,14 @@ export class AppSettingsService {
       shouldRandom: true,
     },
 
-    {
-      name: 'Random',
-      value: 'random',
-      api: null,
-      ws: null,
-      auth: null,
-      shouldRandom: false,
-    },
+    // {
+    //   name: 'Random',
+    //   value: 'random',
+    //   api: null,
+    //   ws: null,
+    //   auth: null,
+    //   shouldRandom: false,
+    // },
 
     {
       name: 'Custom Server',
@@ -124,7 +124,7 @@ export class AppSettingsService {
     },
 
     {
-      name: 'Offline',
+      name: 'Offline Mode',
       value: 'offline',
       api: null,
       ws: null,

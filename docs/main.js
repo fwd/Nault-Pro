@@ -9627,7 +9627,7 @@ function ConfigureAppComponent_div_0_div_144_span_11_Template(rf, ctx) {
 function ConfigureAppComponent_div_0_div_144_span_12_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵelementStart"](0, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵtext"](1, " Unlimited access to Nano RPC. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵtext"](1, " Unlimited Access to Nano Nodes. ");
     _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵelementStart"](2, "a", 64);
     _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵtext"](3, "Get Nano.to Business API Key");
     _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵelementEnd"]();
@@ -9679,7 +9679,7 @@ function ConfigureAppComponent_div_0_div_144_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵproperty"]("ngIf", ctx_r15.serverAPI && !ctx_r15.serverAPI.includes("nano.to"));
     _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵproperty"]("ngIf", ctx_r15.serverAPI && ctx_r15.serverAPI.includes("nano.to"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵproperty"]("ngIf", ctx_r15.serverAPI && ctx_r15.serverAPI.includes("nano.to") || ctx_r15.serverAPI && ctx_r15.serverAPI.toLowerCase().includes("random"));
   }
 }
 
@@ -30751,14 +30751,14 @@ class AppSettingsService {
                 auth: '',
                 shouldRandom: true,
             },
-            {
-                name: 'Random',
-                value: 'random',
-                api: null,
-                ws: null,
-                auth: null,
-                shouldRandom: false,
-            },
+            // {
+            //   name: 'Random',
+            //   value: 'random',
+            //   api: null,
+            //   ws: null,
+            //   auth: null,
+            //   shouldRandom: false,
+            // },
             {
                 name: 'Custom Server',
                 value: 'custom',
@@ -30768,7 +30768,7 @@ class AppSettingsService {
                 shouldRandom: false,
             },
             {
-                name: 'Offline',
+                name: 'Offline Mode',
                 value: 'offline',
                 api: null,
                 ws: null,

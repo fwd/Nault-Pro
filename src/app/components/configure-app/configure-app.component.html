@@ -274,8 +274,8 @@
                     <input [(ngModel)]="serverAuth" class="uk-input uk-margin-small-bottom" type="text" placeholder="Optional">
                     <span class="uk-text-meta">
                       <span *ngIf="serverAPI && !serverAPI.includes('nano.to')">{{ 'configure-app.this-has-to-be-a-valid-authorization-header' | transloco }}</span>
-                      <span *ngIf="serverAPI && serverAPI.includes('nano.to')">
-                        Unlimited access to Nano RPC.
+                      <span *ngIf="serverAPI && serverAPI.includes('nano.to') || serverAPI && serverAPI.toLowerCase().includes('random')">
+                        Unlimited Access to Nano Nodes.
                         <a href="https://rpc.nano.to/?key" target="_blank">Get Nano.to Business API Key</a>
                       </span>
                     </span>
